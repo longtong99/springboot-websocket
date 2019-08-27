@@ -1,8 +1,9 @@
 # springboot-websocket
-springboot整合websocket，实现点对点聊天、群聊、统计在线人数
+`springboot整合websocket，实现点对点聊天、群聊、统计在线人数`
 
 springboot整合websocket非常简单，就是加入一个依赖，然后在启动类上加个@EnableWebSocket注解
 主要的逻辑都是在加了@ServerEndpoint这个注解的类下面写，另外需要把这个类注册到IOC中
+
 @Component
 @ServerEndpoint(value = "/chat-room/{username}", encoders = { MyMessageEncoder.class })
 @AutoConfigureAfter(LocalCache.class)
